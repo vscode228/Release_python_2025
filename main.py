@@ -15,7 +15,7 @@ screen = pygame.display.set_mode((700, 500))
 pygame.display.set_caption("SPACE_SHOOTER")
 
 WHITE = (255, 255, 255)
-RED   = (255, 0, 0)
+RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 
 img_back = "galaxy.jpg"
@@ -23,7 +23,7 @@ img_hero = "rocket.png"
 img_bullet = "bullet.png"
 img_enemy = "ufo.png"
 img_explosion = "explosion.png"
-img_meteor = "asteroid.png" 
+img_meteor = "asteroid.png"
 
 background = pygame.image.load(img_back)
 hero_img = pygame.image.load(img_hero)
@@ -45,18 +45,16 @@ def main_menu():
     menu = True
     while menu:
         screen.blit(background, (0, 0))
-
         font_title = pygame.font.Font(None, 72)
         title_text = font_title.render("SPACE SHOOTER", True, WHITE)
         screen.blit(title_text, (700 // 2 - title_text.get_width() // 2, 150))
-
         button_rect = pygame.Rect(0, 0, 200, 60)
         button_rect.center = (700 // 2, 350)
         pygame.draw.rect(screen, GREEN, button_rect)
         font_button = pygame.font.Font(None, 36)
         button_text = font_button.render("START", True, WHITE)
         screen.blit(button_text, (button_rect.centerx - button_text.get_width() // 2,
-                                    button_rect.centery - button_text.get_height() // 2))
+                                  button_rect.centery - button_text.get_height() // 2))
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -139,7 +137,7 @@ all_sprites = pygame.sprite.Group()
 all_sprites.add(player)
 
 enemies = pygame.sprite.Group()
-meteors = pygame.sprite.Group() 
+meteors = pygame.sprite.Group()
 bullets = pygame.sprite.Group()
 explosions = pygame.sprite.Group()
 
